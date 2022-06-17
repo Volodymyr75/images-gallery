@@ -1,0 +1,13 @@
+{
+    "prettier.endOfLine": "crlf",
+    "editor.tabSize": 2,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleArgs": [
+        "--max-line-length=88"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "[python]": {
+        "editor.formatOnSave": true
+    }
+}
