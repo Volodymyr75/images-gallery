@@ -1,6 +1,4 @@
-from crypt import methods
 import os
-from unittest import result
 import requests
 from flask import Flask, request, jsonify
 from dotenv import load_dotenv
