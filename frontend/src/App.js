@@ -74,8 +74,20 @@ const App = () => {
   // console.log(word);
 
   // console.log(process.env.REACT_APP_UNSPLASH_KEY);
-  const handleDeleteImage = (id) => {
-    setImages(images.filter((image) => image.id !== id));
+  // const handleDeleteImage = (id) => {
+  //   setImages(images.filter((image) => image.id !== id));
+  // };
+  const handleDeleteImage = async (id) => {
+    try {
+      const res = await axios.delete(`${API_URL}/images/${id}`);
+      // console.log(res.data);
+      // if (res.data?.deleted_id) {}  its his condition
+      if (res.status === 200) {
+        setImages(images.filter((image) => image.id !== id));
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleSaveImage = async (id) => {
